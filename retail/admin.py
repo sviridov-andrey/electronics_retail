@@ -1,24 +1,20 @@
 from django.contrib import admin
-from .models import Factory, Network, Product, Entrepreneur
+from .models import Factory, Network, Entrepreneur
 
 
-class ProductInline(admin.TabularInline):
-    model = Product
-
-
+@admin.register(Factory)
 class FactoryAdmin(admin.ModelAdmin):
-    inlines = [ProductInline]
+    list_display = '__all__'
+    list_filter = ('city',)
 
 
+@admin.register(Network)
 class NetworkAdmin(admin.ModelAdmin):
-    inlines = [ProductInline]
+    list_display = '__all__'
+    list_filter = ('city',)
 
 
+@admin.register(Entrepreneur)
 class EntrepreneurAdmin(admin.ModelAdmin):
-    inlines = [ProductInline]
-
-
-admin.site.register(Factory, FactoryAdmin)
-admin.site.register(Network, NetworkAdmin)
-admin.site.register(Entrepreneur, EntrepreneurAdmin)
-admin.site.register(Product)
+    list_display = '__all__'
+    list_filter = ('city',)
