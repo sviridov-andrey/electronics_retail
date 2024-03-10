@@ -1,9 +1,9 @@
 from django.urls import path, include
 from rest_framework import routers
-from retail.views import FactoryViewSet, NetworkViewSet, EntrepreneurViewSet, ProductViewSet
-from users.apps import UsersConfig
+from retail.apps import RetailConfig
+from retail.views import FactoryViewSet, NetworkViewSet, EntrepreneurViewSet
 
-app_name = UsersConfig.name
+app_name = RetailConfig.name
 
 
 router = routers.DefaultRouter()
