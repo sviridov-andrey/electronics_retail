@@ -12,7 +12,7 @@ class BaseProduct(models.Model):
 
 
 class FactoryProduct(BaseProduct):
-    factory = models.ManyToOneRel(Factory, on_delete=models.CASCADE)
+    factory = models.ForeignKey(Factory, on_delete=models.CASCADE)
 
     def __str__(self):
         return f' {self.prod_name}'
@@ -23,7 +23,7 @@ class FactoryProduct(BaseProduct):
 
 
 class NetworkProduct(BaseProduct):
-    network = models.ManyToOneRel(Network, on_delete=models.CASCADE)
+    network = models.ForeignKey(Network, on_delete=models.CASCADE)
 
     def __str__(self):
         return f' {self.prod_name}'
@@ -34,7 +34,7 @@ class NetworkProduct(BaseProduct):
 
 
 class EntrepreneurProduct(BaseProduct):
-    entrepreneur = models.ManyToOneRel(Entrepreneur, on_delete=models.CASCADE)
+    entrepreneur = models.ForeignKey(Entrepreneur, on_delete=models.CASCADE)
 
     def __str__(self):
         return f' {self.prod_name}'
