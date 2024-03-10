@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Factory, Network, Entrepreneur, Product
+from .models import Factory, Network, Entrepreneur
 
 
 class FactorySerializer(serializers.ModelSerializer):
@@ -17,10 +17,4 @@ class NetworkSerializer(serializers.ModelSerializer):
 class EntrepreneurSerializer(serializers.ModelSerializer):
     class Meta:
         model = Entrepreneur
-        fields = '__all__'
-
-
-class ProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
         fields = '__all__'
