@@ -29,7 +29,7 @@ class Factory(BaseRetail):
 class Network(BaseRetail):
     """розничная сеть"""
 
-    supplier = models.ForeignKey(Factory, on_delete=models.CASCADE)
+    supplier = models.ForeignKey(Factory, on_delete=models.CASCADE, verbose_name='поставщик')
 
     def __str__(self):
         return f' {self.name}'
@@ -42,7 +42,7 @@ class Network(BaseRetail):
 class Entrepreneur(BaseRetail):
     """индивидуальный предприниматель"""
 
-    supplier = models.ForeignKey(Network, on_delete=models.CASCADE)
+    supplier = models.ForeignKey(Network, on_delete=models.CASCADE, verbose_name='поставщик')
 
     def __str__(self):
         return f' {self.name}'
@@ -50,19 +50,3 @@ class Entrepreneur(BaseRetail):
     class Meta:
         verbose_name = 'индивидуальный предприниматель'
         verbose_name_plural = 'индивидуальные предприниматели'
-
-
-class Product(models.Model):
-    """продукт"""
-
-    prod_name = models.CharField(max_length=100)
-    factory = models.ForeignKey(Factory, on_delete=models.CASCADE, null=True, blank=True)
-    network = models.ForeignKey(Network, on_delete=models.CASCADE, null=True, blank=True)
-    entrepreneur = models.ForeignKey(Entrepreneur, on_delete=models.CASCADE, null=True, blank=True)
-
-    def __str__(self):
-        return f' {self.prod_name}'
-
-    class Meta:
-        verbose_name = 'продукт'
-        verbose_name_plural = 'продукты'
