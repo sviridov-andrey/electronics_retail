@@ -30,7 +30,3 @@ class EntrepreneurViewSet(viewsets.ModelViewSet):
     queryset = Entrepreneur.objects.all()
     serializer_class = EntrepreneurSerializer
 
-
-class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
