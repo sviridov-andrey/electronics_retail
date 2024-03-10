@@ -10,7 +10,6 @@ router = routers.DefaultRouter()
 router.register(r'factory', FactoryViewSet)
 router.register(r'network', NetworkViewSet)
 router.register(r'entrepreneur', EntrepreneurViewSet)
-router.register(r'product', ProductViewSet)
 
 
 urlpatterns = [

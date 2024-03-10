@@ -4,14 +4,14 @@ from products.models import FactoryProduct, NetworkProduct, EntrepreneurProduct
 
 @admin.register(FactoryProduct)
 class FactoryProductAdmin(admin.ModelAdmin):
-    list_display = '__all__'
+    pass
 
 
 @admin.register(NetworkProduct)
 class NetworkProductAdmin(admin.ModelAdmin):
-    list_display = '__all__'
+    pass
 
 
 @admin.register(EntrepreneurProduct)
 class EntrepreneurProductAdmin(admin.ModelAdmin):
-    list_display = '__all__'
+    pass
